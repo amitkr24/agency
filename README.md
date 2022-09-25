@@ -1,5 +1,5 @@
 
-# Covid-19 Hospital API
+# Agency API
 
 An API created using NodeJS for the agency in which different client can be relate to different agency.
 
@@ -50,7 +50,8 @@ Data that needs to be sent with a route :
     a. /user/register - name, email, password (Form type:x-www-form-urlencoded)
     b. /user/login - email, password (Form type:x-www-form-urlencoded).
     c. /agency/register - JWT Token (In Authorization ->choose bearer token & enter valid token), name, address1, address2,state,city,phone (Form type:x-www-form-urlencoded).
-    d. /client/:id/create - JWT Token (In Authorization ->choose bearer token & enter valid token), name,email,phone,total_bill (Form type:x-www-form-urlencoded).
+    d. /client/:id/create - JWT Token (In Authorization ->choose bearer token & enter valid token), name,email,phone,total_bill (Form type:x-www-form-urlencoded). Note: id means agency id
+    
     e. /client/:id/update - JWT Token (In Authorization ->choose bearer token & enter valid token), name,email,phone,total_bill
     f. /client/:id/clients  - List of clients with the agency name.
 
