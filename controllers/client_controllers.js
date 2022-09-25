@@ -79,14 +79,14 @@ module.exports.clientUpdate = async function(req,res){
     try{
         //find and update client
         let updated_data = await Clients.findByIdAndUpdate(req.params.id,req.body);
-        console.log(updated_data);
+        let udata = req.body
 
         // return response message
          return res.status(200).json({
             message:'clients data updated successfully',
 
             data:{
-                updated_data
+                udata
             },
         })
     }catch(err){
