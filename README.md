@@ -1,7 +1,7 @@
 
 # Covid-19 Hospital API
 
-An API created using NodeJS for the doctors of a hospital to cater to the need of the healthcare system during Covid-19.
+An API created using NodeJS for the agency in which different client can be relate to different agency.
 
 
 
@@ -10,13 +10,13 @@ An API created using NodeJS for the doctors of a hospital to cater to the need o
 Clone the project
 
 ```bash
-  git clone https://github.com/amitkr24/hospital-api-development.git
+  git clone https://github.com/amitkr24/agency.git
 ```
 
 Go to the project directory
 
 ```bash
-  cd hospital-api-development
+  cd agency
 ```
 
 Install dependencies
@@ -34,30 +34,30 @@ Start the server
   
 ## Documentation
 
-Root Hosted Link - https://hospital-api-development.onrender.com/
+Root Hosted Link - https://agency-api.onrender.com/
 
 Routes :
 
-    a. /doctors/register - Registers a new Doctor.
-    b. /doctors/login - Authenticates and returns the JWT token to be used.
-    c. /patients/register - Allows a doctor to register a new patient (JWT Auth enabled).
-    d. /patients/:id/create_report - Allows a doctor to create a patients report (JWT Auth enabled).
-    e. /patients/:id/reports - Sends all the reports of a patient oldest to latest. (JWT Auth enabled).
-    f. /reports/:status - List of all the reports of all patients with a specific status. (JWT Auth enabled).
+    a. /user/register - Registers a new User.
+    b. /user/login - Authenticates and returns the JWT token to be used.
+    c. /agency/register - Allows a user to register a new agency (JWT Auth enabled).
+    d. /client/:id/create - Allows a user to create a client (JWT Auth enabled).
+    e. /client/:id/update - update client details
+    f. /client/:id/clients - List of clients with the agency name. (JWT Auth enabled).
 
 Data that needs to be sent with a route :
     
-    a. /doctors/register - name, email, password (Form type:x-www-form-urlencoded)
-    b. /doctors/login - email, password (Form type:x-www-form-urlencoded).
-    c. /patients/register - JWT Token (In Authorization ->choose bearer token & enter valid token), name, phone, age (Form type:x-www-form-urlencoded).
-    d. /patients/:id/create_report - JWT Token (In Authorization ->choose bearer token & enter valid token), Patient's ID , status (Form type:x-www-form-urlencoded).
-    e. /patients/:id/reports - JWT Token (In Authorization ->choose bearer token & enter valid token), Patient's ID.
-    f. /reports/:status - JWT Token (In Authorization ->choose bearer token & enter valid token), status.
+    a. /user/register - name, email, password (Form type:x-www-form-urlencoded)
+    b. /user/login - email, password (Form type:x-www-form-urlencoded).
+    c. /agency/register - JWT Token (In Authorization ->choose bearer token & enter valid token), name, address1, address2,state,city,phone (Form type:x-www-form-urlencoded).
+    d. /client/:id/create - JWT Token (In Authorization ->choose bearer token & enter valid token), name,email,phone,total_bill (Form type:x-www-form-urlencoded).
+    e. /client/:id/update - JWT Token (In Authorization ->choose bearer token & enter valid token), name,email,phone,total_bill
+    f. /client/:id/clients  - List of clients with the agency name.
 
 Folder Structure
 
     a. index.js - Server runs here
-    b. model - Contains all the models for Doctor, Patient, Report.
+    b. model - Contains all the models for user, client, agency.
     c. routes - Contains all the routes.
     d. controller - Contains all the controllers.
     e. config - Contains all the config files.
